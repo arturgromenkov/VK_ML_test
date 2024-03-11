@@ -4,5 +4,9 @@ RUN pip3 install cmake && \
     pip3 install pandas && \
     pip3 install xgboost && \
     pip3 install scikit-learn
-COPY ["rangemodel.pkl","predict.py", "test_df_no_target.csv"]
-CMD ["python"]
+COPY ./rangemodel.pkl /
+COPY ./predict.py   /
+COPY ./test_df_no_target.csv    /
+CMD [ "python3", "predict.py" ]
+
+
